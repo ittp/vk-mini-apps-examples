@@ -12,6 +12,19 @@ export interface Product {
   photos: Array<{ url: string; appearence: ImageBackgroundAppereance }>
 }
 
+
+export interface Address {
+  id: number
+  address: string
+  city: string
+  zip: string
+  views: string[]
+  description: string
+  categoryId: number[]
+  //back: ImageBackgroundAppereance
+  //map: Array<{ url: string; appearence: ImageBackgroundAppereance }>
+}
+
 export type ProductPreview = Omit<
   Product,
   'categoryId' | 'photos' | 'description'

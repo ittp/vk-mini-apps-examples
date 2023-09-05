@@ -54,6 +54,8 @@ export const CartItem: FC<OrderProduct> = memo(
 
     return (
       <div onClick={onItemClick} className="CartItem">
+
+      
         <div className="CartItem_preview">
           <picture>
             <source srcSet={preview + '.webp'} type="image/webp"></source>

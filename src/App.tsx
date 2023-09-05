@@ -6,7 +6,8 @@ import {
   usePlatform,
   Platform,
   Epic,
-  useAdaptivityWithJSMediaQueries,
+  useAdaptivityWithJSMediaQueries
+
 } from '@vkontakte/vkui'
 import bridge, { SharedUpdateConfigData } from '@vkontakte/vk-bridge'
 import {
@@ -14,6 +15,8 @@ import {
   usePopout,
   useRouteNavigator,
 } from '@vkontakte/vk-mini-apps-router'
+
+
 import { useAppDispatch, useAppSelector } from './store'
 import {
   selectOnboardingComplete,
@@ -28,6 +31,10 @@ import { CustomTabbar } from './components'
 
 const APP_WIDTH = 911
 const APP_PADDING = 100
+
+
+export const orgs = ['VZ', 'KS', 'LB', 'FC', 'PO']
+
 
 export const App: FC = () => {
   const dispatch = useAppDispatch()
@@ -96,6 +103,11 @@ export const App: FC = () => {
         width: APP_WIDTH,
         height: viewport_height - APP_PADDING,
       })
+
+
+      // bridge.send('VKWebAppStorageSet', {
+      //   orgs
+      // })
     }
 
     iframeResize()
@@ -113,6 +125,8 @@ export const App: FC = () => {
   useEffect(() => {
     if (!onboadrdingComplete) routeNavigator.showModal('onboarding')
   }, [onboadrdingComplete, routeNavigator])
+
+  console.log(orgs)
 
   /**
    * SplitLayout - Компонент-контейнер для реализации интерфейса с многоколоночной структурой [https://vkcom.github.io/VKUI/#/SplitLayout]
@@ -136,7 +150,7 @@ export const App: FC = () => {
             history={panelsHistory}
             nav={ShopView.Main}
             activePanel={activePanel}
-          >
+          >      
             <Store nav={ShopPanel.Store} />
             <ProductInfo nav={ShopPanel.ProductInfo} />
             <ShoppingCart nav={ShopPanel.ShoppingCart} />

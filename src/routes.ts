@@ -6,6 +6,15 @@ import {
   createView,
 } from '@vkontakte/vk-mini-apps-router'
 
+
+const ADDRESS_ROOT = 'address'
+
+export enum AddressPanel {
+  AddressCard = 'AddressCard',
+  OrgCard = 'orgCard',
+  Addresses = '/addresses',
+}
+
 const SHOP_ROOT = 'shop'
 export const INITIAL_URL = '/'
 

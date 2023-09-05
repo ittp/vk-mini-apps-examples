@@ -61,7 +61,7 @@ export const ProductCard: FC<ProductCardProps> = memo(
             />
           </picture>
         </div>
-
+       
         <div className="ProductCard_bottom">
           <div className="ProductCard_info">
             <PriceDisplay className="ProductCard_price" price={price} />
