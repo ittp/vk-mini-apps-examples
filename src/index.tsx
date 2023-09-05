@@ -24,9 +24,13 @@ bridge.send('VKWebAppInit')
  * AdaptivityProvider  - прокидывает данные адаптивности sizeX, sizeY [https://vkcom.github.io/VKUI/#/AdaptivityProvider]
  * AppRoot - компонент обертка, куда инкапсулирована логика режимов пожлкючения(Full, Partial, Embedded) [https://vkcom.github.io/VKUI/#/AppRoot]
  */
+
+
 const container = document.getElementById('root')
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = createRoot(container!)
+
+
 root.render(
   <RouterProvider router={router}>
     <ConfigProvider webviewType={WebviewType.INTERNAL}>

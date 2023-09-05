@@ -2,11 +2,14 @@ import { Category, ImageBackgroundAppereance, Product, ProductFilter, ShopInfo }
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import * as api from 'src/api'
 import { RootState } from '.'
+
+
 export interface AppState {
   productInfo: Product
   categories: Category[]
   shopInfo: ShopInfo
   filters: ProductFilter
+
 }
 
 export const appInitialState: AppState = {
@@ -27,6 +30,7 @@ export const appInitialState: AppState = {
     description: '',
     maxAvailable: 0,
   },
+
 }
 
 /** Запрос на получения контента магазина через асинхронный action: fetchShop */

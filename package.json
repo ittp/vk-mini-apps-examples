@@ -19,11 +19,16 @@
     "@vkontakte/vk-mini-apps-router": "^1.1.1",
     "@vkontakte/vkui": "^5.7.1",
     "@vkontakte/vkui-tokens": "^4.35.1",
+    "axios": "^1.5.0",
     "classnames": "^2.3.2",
+    "glpi-client": "^2.0.0",
+    "jq": "^1.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
-    "swr": "^2.2.2"
+    "swr": "^2.2.2",
+    "yaml": "^2.3.2",
+    "yq": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.4.2",

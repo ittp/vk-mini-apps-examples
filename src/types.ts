@@ -63,3 +63,11 @@ export enum ImageBackgroundAppereance {
   Beige = 'beige',
   Violet = 'violet',
 }
+
+export interface Orgs {
+  key: string
+  name: string
+}
+
+
+

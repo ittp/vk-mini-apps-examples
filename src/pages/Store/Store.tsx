@@ -112,10 +112,8 @@ export const Store: FC<NavIdProps> = memo((props: NavIdProps) => {
     <Panel className="Panel__fullScreen" {...props}>
       {!isDesktop && (
         <>
-          <PanelHeader separator={false}>
-            <span>{shopName}</span>
-          </PanelHeader>
-          <Filters />
+        DesktopHeader
+                  <Filters />
         </>
       )}
 

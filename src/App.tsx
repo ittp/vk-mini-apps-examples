@@ -6,10 +6,12 @@ import {
   usePlatform,
   Platform,
   Epic,
-  useAdaptivityWithJSMediaQueries
+  useAdaptivityWithJSMediaQueries,
+  Group
 
 } from '@vkontakte/vkui'
 import bridge, { SharedUpdateConfigData } from '@vkontakte/vk-bridge'
+
 import {
   useActiveVkuiLocation,
   usePopout,
@@ -29,12 +31,100 @@ import { ShopPanel, ShopView } from './routes'
 import { fetchShop } from './store/app.reducer'
 import { CustomTabbar } from './components'
 
+
+import { Icon16Clear } from '@vkontakte/icons'
+
+
+
 const APP_WIDTH = 911
 const APP_PADDING = 100
 
 
-export const orgs = ['VZ', 'KS', 'LB', 'FC', 'PO']
 
+// const Example = () => {
+//   const [colors, setColors] = React.useState([
+//     {
+//       value: 'navarin',
+//       label: 'Наваринского пламени с дымом',
+//     },
+//     {
+//       value: 'red',
+//       label: 'Красный',
+//     },
+//     {
+//       value: 'blue',
+//       label: 'Синий',
+//     },
+//   ]);
+
+//   const onClick = (e) => {
+//     e.stopPropagation();
+//     setColors([]);
+//   };
+
+//   return (
+//     <View activePanel="panel">
+//       <Panel id="panel">
+//         <PanelHeader>ChipsInput</PanelHeader>
+//         <Group>
+//           <FormItem htmlFor="color" top="Цвет">
+//             <ChipsInput
+//               id="color"
+//               value={colors}
+//               after={
+//                 <IconButton hoverMode="opacity" aria-label="Очистить поле" onClick={onClick}>
+//                   <Icon16Clear />
+//                 </IconButton>
+//               }
+//             />
+//           </FormItem>
+//           <FormItem htmlFor="list" top="Список">
+//             <ChipsInput id="list" placeholder="Введите название и нажмите Enter" />
+//           </FormItem>
+//           <FormItem htmlFor="favoriteGroups" top="Любимые группы">
+//             <ChipsInput
+//               id="favoriteGroups"
+//               readOnly
+//               value={[
+//                 {
+//                   value: '1',
+//                   label: 'Arctic Monkeys',
+//                   src: getAvatarUrl('audio_arctic_monkeys'),
+//                 },
+//                 {
+//                   value: '2',
+//                   label: 'Звери'
+//                   // src: getAvatarUrl('audio_leto_zveri'),
+//                 },
+//                 { value: '4', label: 'FACE', src: getAvatarUrl('audio_face') },
+//                 {
+//                   value: '3',
+//                   label: 'Depeche Mode'
+//                   // src: getAvatarUrl('audio_depeche_mode'),
+//                 },
+//                 {
+//                   value: '5',
+//                   label: 'Linkin Park'
+//                   // src: getAvatarUrl('audio_linkin_park'),
+//                 },
+//               ]}
+//               renderChip={({ value, label, option: { src }, ...rest }) => (
+//                 <Chip
+//                   value={value}
+//                   removable={false}
+//                   before={<Avatar size={20} src={src} role="presentation" />}
+//                   {...rest}
+//                 >
+//                   {label}
+//                 </Chip>
+//               )}
+//             />
+//           </FormItem>
+//         </Group>
+//       </Panel>
+//     </View>
+//   );
+// };
 
 export const App: FC = () => {
   const dispatch = useAppDispatch()
@@ -105,9 +195,7 @@ export const App: FC = () => {
       })
 
 
-      // bridge.send('VKWebAppStorageSet', {
-      //   orgs
-      // })
+
     }
 
     iframeResize()
@@ -125,8 +213,6 @@ export const App: FC = () => {
   useEffect(() => {
     if (!onboadrdingComplete) routeNavigator.showModal('onboarding')
   }, [onboadrdingComplete, routeNavigator])
-
-  console.log(orgs)
 
   /**
    * SplitLayout - Компонент-контейнер для реализации интерфейса с многоколоночной структурой [https://vkcom.github.io/VKUI/#/SplitLayout]

@@ -1,43 +1,46 @@
 export const SECTIONS = [
-  { id: 1, name: 'VKUI', description: 'VKUI-компоненты на этой странице:' },
-  { id: 2, name: 'JS', description: 'JS feature:' },
+  { id: 1, name: 'VZ', description: 'VAPE ZONE' },
+  { id: 2, name: 'KS', description: 'KAIF SMOKE' },
+  { id: 3, name: 'LB', description: 'LOVEBUTIK' },
+  { id: 4, name: 'FC', description: 'FASTCUP' },
+  { id: 5, name: 'PO', description: 'PROOPTIC' },
 ]
 
 export const ITEMS = [
   {
-    name: 'Button',
+    name: 'VAPE ZONE',
     link: 'https://vkcom.github.io/VKUI/#/Button',
-    sectionId: 1,
-    id: 0,
-  },
-  {
-    name: 'Input',
-    link: 'https://vkcom.github.io/VKUI/#/Input',
     sectionId: 1,
     id: 1,
   },
   {
-    name: 'Group',
-    link: 'https://vkcom.github.io/VKUI/#/Group',
+    name: 'KAIFSMOKE',
+    link: 'https://vkcom.github.io/VKUI/#/Input',
     sectionId: 1,
     id: 2,
   },
   {
-    name: 'SubnavigationBar',
+    name: 'LOVEBUTIK',
+    link: 'https://vkcom.github.io/VKUI/#/Group',
+    sectionId: 3,
+    id: 2,
+  },
+  {
+    name: 'FASTCUP',
     link: 'https://vkcom.github.io/VKUI/#/SubnavigationBar',
-    sectionId: 1,
+    sectionId: 3,
     id: 3,
   },
   {
-    name: 'SubnavigationButton',
+    name: 'PROOPTIC',
     link: 'https://vkcom.github.io/VKUI/#/SubnavigationButton',
-    sectionId: 1,
+    sectionId: 4,
     id: 4,
   },
   {
     name: 'ModalPage',
     link: 'https://vkcom.github.io/VKUI/#/ModalPage',
-    sectionId: 1,
+    sectionId: 5,
     id: 5,
   },
   {
