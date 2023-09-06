@@ -41,6 +41,7 @@ root.render(
           </AppRoot>
         </AdaptivityProvider>
       </Provider>
+      <div>Developer</div>
     </ConfigProvider>
   </RouterProvider>
 )

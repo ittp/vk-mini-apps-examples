@@ -7,7 +7,9 @@ import {
   Platform,
   Epic,
   useAdaptivityWithJSMediaQueries,
-  Group
+  Group,
+  Input,
+  List
 
 } from '@vkontakte/vkui'
 import bridge, { SharedUpdateConfigData } from '@vkontakte/vk-bridge'
@@ -225,18 +227,23 @@ export const App: FC = () => {
      * popout - свойство для отрисовки Alert ActionSheet ScreenSpinner
      * modal - свойство для отрисовки модальных страниц(ModalRoot)
      */
+
+
     <SplitLayout popout={routerPopout} modal={<Modals />}>
       <SplitCol>
         <Epic
           activeStory={activeView}
           tabbar={!isDesktop && <CustomTabbar activePanel={activePanel} />}
         >
+          
           <View
             onSwipeBack={onSwipeBack}
             history={panelsHistory}
             nav={ShopView.Main}
             activePanel={activePanel}
-          >      
+          > 
+
+            <Group></Group>            
             <Store nav={ShopPanel.Store} />
             <ProductInfo nav={ShopPanel.ProductInfo} />
             <ShoppingCart nav={ShopPanel.ShoppingCart} />
@@ -244,5 +251,6 @@ export const App: FC = () => {
         </Epic>
       </SplitCol>
     </SplitLayout>
+
   )
 }

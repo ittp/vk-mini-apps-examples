@@ -112,8 +112,12 @@ export const Store: FC<NavIdProps> = memo((props: NavIdProps) => {
     <Panel className="Panel__fullScreen" {...props}>
       {!isDesktop && (
         <>
-        DesktopHeader
-                  <Filters />
+          <PanelHeader separator={false}>
+            <div className="ag_logo">Anabasis</div>
+            <span style={{fontSize: 16}}>Group</span>
+          </PanelHeader>
+          {/* Replace with GlobalHeader */}
+          <Filters />
         </>
       )}
 
