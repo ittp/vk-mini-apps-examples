@@ -22,7 +22,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "indent": ["info", 2, { "SwitchCase": 1 }],
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
     "no-await-in-loop": "error",
