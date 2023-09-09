@@ -9,7 +9,6 @@ export interface AppState {
   categories: Category[]
   shopInfo: ShopInfo
   filters: ProductFilter
-
 }
 
 export const appInitialState: AppState = {

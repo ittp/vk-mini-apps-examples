@@ -39,6 +39,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "@vkontakte/vk-miniapps-deploy": "^0.1.5",
     "babel-eslint": "^10.1.0",
+    "@babel/plugin-proposal-private-property-in-object":"latest",
     "cross-env": "^7.0.3",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",

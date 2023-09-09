@@ -5,7 +5,9 @@ import {
   PanelHeader,
   Spacing,
   useAdaptivityWithJSMediaQueries,
+  Group
 } from '@vkontakte/vkui'
+
 import { CartCountIsland, Filters, Products, TechInfo } from 'src/components'
 import { useAppDispatch, useAppSelector } from 'src/store'
 import {
@@ -113,13 +115,16 @@ export const Store: FC<NavIdProps> = memo((props: NavIdProps) => {
       {!isDesktop && (
         <>
           <PanelHeader separator={false}>
-            <div className="ag_logo">Anabasis</div>
-            <span style={{fontSize: 16}}>Group</span>
+            <div className="ag_logo">{shopName}</div>
           </PanelHeader>
           {/* Replace with GlobalHeader */}
           <Filters />
         </>
       )}
+
+      <Group>
+        
+      </Group>
 
       <div ref={$storeContainer} className={'Store'} onScroll={onHandleScroll}>
         <Products products={store.products} fetching={store.isStoreFetching} />
@@ -136,4 +141,4 @@ export const Store: FC<NavIdProps> = memo((props: NavIdProps) => {
   )
 })
 
-Store.displayName = 'Store'
+Store.displayName = 'Support'
