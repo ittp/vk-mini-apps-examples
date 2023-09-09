@@ -5,6 +5,7 @@
     "paths": {
       "@lib/*": ["./lib/*"]
     },
+    "reactNamespace": "React",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "allowJs": true,
