@@ -6,8 +6,9 @@ import {
   createView,
 } from '@vkontakte/vk-mini-apps-router'
 
-
 const ADDRESS_ROOT = 'address'
+
+const TICKETS_ROOT = 'tickets'
 
 export enum AddressPanel {
   AddressCard = 'AddressCard',
@@ -26,6 +27,7 @@ export enum ShopPanel {
   ProductInfo = 'productInfo',
   ShoppingCart = 'shoppingCart',
   Store = '/',
+  Tickets = 'tickets',
 }
 
 /** Настройка типизированной конфигурации маршрутов */

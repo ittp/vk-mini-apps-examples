@@ -1,4 +1,7 @@
 import { ApiEndpoint } from 'src/types'
+import axios from 'axios'
+
+const APIS_URL = 'https://apis.anabasis.pro'
 
 const API_URL = 'https://shop-boilerplate-backend.vercel.app'
 
@@ -28,5 +31,11 @@ export const makeRequest = async <T = never>({
   const url = new URL(API_URL + '/' + endpoint)
   url.search = new URLSearchParams(params).toString()
 
+  const axiosConfig = {
+    baseURL: APIS_URL,
+    headers: {},
+  }
+  const apisRequest = await axios(axiosConfig)
+  console.log(url)
   return (await fetch(url, requestOptions)).json() as T
 }

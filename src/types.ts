@@ -12,18 +12,17 @@ export interface Product {
   photos: Array<{ url: string; appearence: ImageBackgroundAppereance }>
 }
 
-
 export interface Address {
   id: number
   address: string
-  city: string
-  zip: string
-  views: string[]
-  description: string
-  categoryId: number[]
+  street: string
+  house: string
+  organizations: number[]
   //back: ImageBackgroundAppereance
   //map: Array<{ url: string; appearence: ImageBackgroundAppereance }>
 }
+
+export type AddressPreview = Omit<Address, 'address' | 'organizations' | 'id'>
 
 export type ProductPreview = Omit<
   Product,
@@ -31,6 +30,13 @@ export type ProductPreview = Omit<
 >
 
 export type OrderProduct = ProductPreview & { numItemsToBuy: number }
+
+export interface Organization {
+  id: number
+  key: string
+  name: string
+  description: number
+}
 
 export interface Category {
   id: number
@@ -54,6 +60,7 @@ export enum ApiEndpoint {
   InitialData = 'getInitialData',
   ProductInfo = 'getProductInfo',
   FilteredProducts = 'getFilteredProducts',
+  Addresses = 'getAddresses',
 }
 
 export enum ImageBackgroundAppereance {
@@ -68,6 +75,3 @@ export interface Orgs {
   key: string
   name: string
 }
-
-
-

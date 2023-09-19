@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_utils_addresses",
+  "info": {
+    "displayName": "address",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "at": {
+      "type": "enumeration",
+      "enum": [
+        "before",
+        "after"
+      ]
+    },
+    "street": {
+      "type": "text"
+    },
+    "house": {
+      "type": "richtext",
+      "default": "1",
+      "minLength": 1,
+      "maxLength": 999,
+      "required": true
+    }
+  }
+}

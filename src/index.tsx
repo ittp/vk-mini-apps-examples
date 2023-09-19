@@ -1,12 +1,19 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import bridge from '@vkontakte/vk-bridge'
-import { ConfigProvider, AdaptivityProvider, AppRoot, WebviewType } from '@vkontakte/vkui'
+import {
+  ConfigProvider,
+  AdaptivityProvider,
+  AppRoot,
+  WebviewType,
+} from '@vkontakte/vkui'
 import { RouterProvider } from '@vkontakte/vk-mini-apps-router'
 import { router } from './routes'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { App } from './App'
+
+import axios from 'axios'
 
 /** Подключаем стили vkui из собранной папки dist в node_modules/vkontakte/vkui/ */
 import '@vkontakte/vkui/dist/vkui.css'
@@ -25,11 +32,13 @@ bridge.send('VKWebAppInit')
  * AppRoot - компонент обертка, куда инкапсулирована логика режимов пожлкючения(Full, Partial, Embedded) [https://vkcom.github.io/VKUI/#/AppRoot]
  */
 
-
 const container = document.getElementById('root')
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = createRoot(container!)
 
+export const strapi = axios.create({
+  baseURL: 'https://apis.anabasis.pro/api',
+})
 
 root.render(
   <RouterProvider router={router}>

@@ -1,11 +1,14 @@
 import { FC, memo, useLayoutEffect, useRef } from 'react'
 import {
   NavIdProps,
+  Cell,
+  Button,
+  Search,
   Panel,
   PanelHeader,
   Spacing,
   useAdaptivityWithJSMediaQueries,
-  Group
+  Group,
 } from '@vkontakte/vkui'
 
 import { CartCountIsland, Filters, Products, TechInfo } from 'src/components'
@@ -23,10 +26,16 @@ import './Store.css'
 
 const MOBILE_LIMIT = 12
 const DESKTOP_LIMIT = 40
+
 const IMAGE_LOADING_OPRIONS = {
   findImage,
   delay: 150,
   attributeName: 'data-src',
+}
+
+const Ticket = (props: NavIdProps) => {
+  
+  return { tickets: [] }
 }
 
 export const Store: FC<NavIdProps> = memo((props: NavIdProps) => {
@@ -121,10 +130,6 @@ export const Store: FC<NavIdProps> = memo((props: NavIdProps) => {
           <Filters />
         </>
       )}
-
-      <Group>
-        
-      </Group>
 
       <div ref={$storeContainer} className={'Store'} onScroll={onHandleScroll}>
         <Products products={store.products} fetching={store.isStoreFetching} />
