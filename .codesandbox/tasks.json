@@ -31,6 +31,10 @@
       "name": "deploy",
       "command": "npm run deploy",
       "runAtStart": false
+    },
+    "cd ./strapi && yarn develop": {
+      "name": "cd ./strapi && yarn develop",
+      "command": "cd ./strapi && yarn develop"
     }
   }
 }

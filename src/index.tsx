@@ -15,6 +15,18 @@ import { App } from './App'
 
 import axios from 'axios'
 
+
+import { renderToReadableStream } from 'react-dom/server';
+
+async function handler(request) {
+  const stream = await renderToReadableStream(<App />, {
+    bootstrapScripts: ['/main.js']
+  });
+  return new Response(stream, {
+    headers: { 'content-type': 'text/html' },
+  });
+}
+
 /** Подключаем стили vkui из собранной папки dist в node_modules/vkontakte/vkui/ */
 import '@vkontakte/vkui/dist/vkui.css'
 

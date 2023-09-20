@@ -23,6 +23,7 @@ interface Arguments {
   // post запрос
   makeRequest('postProduct', requestOptions: JSON.stringify({method: 'post', body: {id: 2}}))
  */
+
 export const makeRequest = async <T = never>({
   params,
   endpoint,

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "uid",
+      "required": true
+    },
+    "fullname": {
+      "type": "text"
+    }
+  }
+}

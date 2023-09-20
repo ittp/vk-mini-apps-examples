@@ -75,12 +75,17 @@ export const App: FC = () => {
       else if (userData) {
         dispatch(setUserData({ name: userData.first_name, id: userData.id }))
         dispatch(setOnboardingComplete(false))
+
+        
+        
         bridge.send('VKWebAppStorageSet', {
           key: userData.id.toString(),
           value: userData.first_name,
         })
       }
     }
+
+
 
     initUser()
   }, [dispatch])

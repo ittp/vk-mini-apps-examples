@@ -23,6 +23,22 @@ interface Arguments {
   // post запрос
   makeRequest('postProduct', requestOptions: JSON.stringify({method: 'post', body: {id: 2}}))
  */
+
+interface Context {
+  data: any
+}
+
+const makeRequestAxios = async ({
+  params,
+  endpoint,
+  requestOptions,
+}: Arguments) => {
+  const values = Object.values(params)
+
+  const { data } = await axios.get(APIS_URL + endpoint)
+  return data as Context
+}
+
 export const makeRequest = async <T = never>({
   params,
   endpoint,
@@ -35,7 +51,7 @@ export const makeRequest = async <T = never>({
     baseURL: APIS_URL,
     headers: {},
   }
-  const apisRequest = await axios(axiosConfig)
-  console.log(url)
+  // const apisRequest = await axios(axiosConfig)
+  //console.log(url)
   return (await fetch(url, requestOptions)).json() as T
 }
